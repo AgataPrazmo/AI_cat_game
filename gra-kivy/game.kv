@@ -1,0 +1,90 @@
+# game.kv
+
+ScreenManager:
+    RegisterScreen:
+    LoginScreen:
+    GameScreen:
+
+<RegisterScreen>:
+    name: 'register'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 20
+        Label:
+            text: "Rejestracja"
+        TextInput:
+            id: reg_user
+            hint_text: "Nazwa użytkownika"
+        TextInput:
+            id: reg_pass
+            hint_text: "Hasło"
+            password: True
+        Button:
+            text: "Zarejestruj"
+            on_release: root.register()
+        Label:
+            id: reg_msg
+            text: ""
+        Button:
+            text: "Masz konto? Zaloguj się"
+            on_release: root.manager.current = 'login'
+
+<LoginScreen>:
+    name: 'login'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 20
+        Label:
+            text: "Logowanie"
+        TextInput:
+            id: log_user
+            hint_text: "Nazwa użytkownika"
+        TextInput:
+            id: log_pass
+            hint_text: "Hasło"
+            password: True
+        Button:
+            text: "Zaloguj"
+            on_release: root.login()
+        Label:
+            id: log_msg
+            text: ""
+        Button:
+            text: "Nie masz konta? Zarejestruj"
+            on_release: root.manager.current = 'register'
+
+<GameScreen>:
+    name: 'game'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 20
+        Label:
+            id: story_label
+            text: root.story_text
+            text_size: self.width, None
+            valign: 'top'
+            size_hint_y: None
+            height: self.texture_size[1] + 20
+        ScrollView:
+            size_hint_y: None
+            height: 200
+            BoxLayout:
+                id: buttons_box
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+        TextInput:
+            id: choice_input
+            hint_text: "Twój wybór..."
+            multiline: False
+            size_hint_y: None
+            height: 40
+        Button:
+            text: "Wyślij"
+            size_hint_y: None
+            height: 40
+            on_release: root.submit_choice()
+

@@ -1,0 +1,24 @@
+<!login.html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logowanie</title>
+</head>
+<body>
+    <h2>Zaloguj się lub zarejestruj</h2>
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post" action="/login-form">
+        <input type="text" name="username" placeholder="Login"><br>
+        <input type="password" name="password" placeholder="Hasło"><br>
+        <input type="submit" value="Zaloguj">
+    </form>
+    <br>
+    <form method="post" action="/register">
+        <input type="text" name="username" placeholder="Login"><br>
+        <input type="password" name="password" placeholder="Hasło"><br>
+        <input type="submit" value="Zarejestruj">
+    </form>
+</body>
+</html>

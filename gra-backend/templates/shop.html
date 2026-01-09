@@ -1,0 +1,23 @@
+<!shop.html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sklep</title>
+</head>
+<body>
+    <h2>Witaj, {{ user }}!</h2>
+    <h3>Twój profil:</h3>
+    <p>Animacje: {{ "Tak" if purchases.animations else "Nie" }}</p>
+    <p>Kocie smaczki: {{ purchases.snacks }}</p>
+
+    <h3>Sklep</h3>
+    <form method="post" action="/buy">
+        <input type="hidden" name="item" value="animations">
+        <button type="submit">Kup animacje</button>
+    </form>
+    <form method="post" action="/buy">
+        <input type="hidden" name="item" value="snacks">
+        <button type="submit">Kup 10 kocich smaczków</button>
+    </form>
+</body>
+</html>
