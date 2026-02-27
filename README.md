@@ -1,20 +1,20 @@
-### Gra fabularna oparta na technologiach Kivy i FastAPI z wykorzystaniem OpenAI i metody Prompt Engineering do dynamicznej rozbudowy fabuły
-Hybrydowy system narracyjny łączący statyczne drzewa decyzyjne z dynamiczną generacją treści przez OpenAI GPT. Aplikacja mobilna zbudowana w Kivy (Python) komunikująca się z asynchronicznym backendem FastAPI.
+### Role-playing game based on Kivy and FastAPI technologies using OpenAI and the Prompt Engineering method for dynamic plot expansion (Polish language model)
+Hybrid narrative system combining static decision trees with dynamic content generation by OpenAI GPT. Mobile application built in Kivy (Python) communicating with an asynchronous FastAPI backend.
 
-### Główne Funkcje
-- Hybrydowa narracja: Połączenie predefiniowanych ścieżek z dynamicznym AI.
-- Persystencja SQLite: Automatyczny zapis i unikalność promptów użytkowników.
-- Blokada UI: Zabezpieczenie przed wielokrotnym wysyłaniem żądań (async/threading).
-- System powrotów: Automatyczne wykrywanie węzłów końcowych i powrót do menu.
+### Main Features
+- Hybrid narrative: Combination of predefined paths with dynamic AI.
+- SQLite persistence: Automatic saving and uniqueness of user prompts.
+- UI lock: Protection against multiple request sending (async/threading).
+- Return system: Automatic detection of terminal nodes and return to menu.
 
-### Stos Technologiczny
+### Technology Stack
 - Frontend: Kivy
 - Backend: FastAPI, Uvicorn
-- Baza danych: SQLite
-- Testy: Pytest (pełne pokrycie frontendu i backendu)
+- Database: SQLite
+- Tests: Pytest (full coverage of frontend and backend)
 
-### Instalacja i Uruchomienie
-1. Instalacja zależności:
+### Installation and Launch
+1. Installation of dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -32,8 +32,8 @@ cd gra-kivy
 python main_app.py
 ```
 
-### Testowanie
-System zawiera pakiet testów automatycznych weryfikujących logikę biznesową, nawigację oraz odporność sieciową.
+### Testing
+The system contains a package of automated tests verifying business logic, navigation, and network resilience.
 ```bash
 pytest gra-backend/test_backend.py
 ```
@@ -41,7 +41,7 @@ pytest gra-backend/test_backend.py
 pytest gra-kivy/test_frontend.py
 ```
 
-### Struktura Projektu
+### Project Structure
 ```bash
 ./PROJEKT-GRY
 ├── gra-backend
