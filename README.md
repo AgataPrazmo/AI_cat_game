@@ -13,6 +13,18 @@ Hybrid narrative system combining static decision trees with dynamic content gen
 - Database: SQLite
 - Tests: Pytest (full coverage of frontend and backend)
 
+
+### Environment Variables
+For the application to function correctly, you must provide your own API keys. Never commit your .env file to version control.
+1. Create a .env file in the gra-backend directory.
+2. Add the following variables:
+```env
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-3.5-turbo
+```
+
+The backend uses these variables to securely communicate with OpenAI and manage the SQLite database.
+
 ### Installation and Launch
 1. Installation of dependencies:
 ```bash
@@ -26,7 +38,7 @@ source venv/bin/activate
 uvicorn main:app --reload
 ```
 
-Start Frontend (Kivy):
+3. Start Frontend (Kivy):
 ```bash
 cd gra-kivy
 python main_app.py
